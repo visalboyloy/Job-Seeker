@@ -55,7 +55,7 @@ r.patch('/applications/:id', protect('employer'), wrap(async (req, res) => {
   const j = a && (await Job.findOne({ _id: a.jobId, employerId: req.user.id }))
   if (!j) return res.status(404).json({ message: 'Application not found.' })
   if (!['Pending', 'Shortlisted', 'Hired', 'Rejected'].includes(req.body.status)) return res.status(400).json({ message: 'Invalid status.' })
-  a.status = req.body.status​​​   
+  a.status = req.body.status
   await a.save()
   res.json(a)
 }))
