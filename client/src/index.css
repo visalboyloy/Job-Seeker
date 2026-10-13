@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --color-paper: #f3f5f2;
+  --color-ink: #12263a;
+  --color-sea: #0d6e6e;
+  --color-sun: #ffc857;
+}
+body { @apply bg-paper text-ink font-sans antialiased; }
+.field { @apply w-full rounded-md border border-ink/25 bg-white px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sea; }
+.btn { @apply inline-flex items-center justify-center rounded-md bg-ink px-4 py-2 font-medium text-white hover:bg-sea focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sea; }
+.btn-ghost { @apply rounded-md border border-ink/30 px-3 py-1.5 text-sm hover:bg-ink hover:text-white; }
