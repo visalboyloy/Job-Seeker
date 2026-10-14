@@ -20,7 +20,7 @@ export default function App() {
     <>
       <header className="border-b border-ink/15 bg-white">
         <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3">
-          <Link to="/" className="mr-auto text-xl font-bold tracking-tight">Shortlist</Link>
+          <Link to="/" className="mr-auto text-xl font-bold tracking-tight">Job Seeker by William</Link>
           <NavLink to="/" end className={link}>Browse jobs</NavLink>
           {me?.role === 'seeker' && <NavLink to="/applications" className={link}>My applications</NavLink>}
           {me?.role === 'employer' && <NavLink to="/employer" className={link}>Employer dashboard</NavLink>}
