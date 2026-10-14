@@ -14,7 +14,7 @@ export function Jobs() {
     j.location.toLowerCase().includes(loc.toLowerCase()) && (!type || j.type === type))
   return (
     <>
-      <h1 className="mb-6 max-w-xl text-4xl font-bold leading-tight tracking-tight">Find the job that fits, then apply in a minute.</h1>
+      <h1 className="mb-6 max-w-xl text-4xl font-serif font-bold leading-tight tracking-tight">Find the job that fits, then apply in a minute.</h1>
       <div className="mb-6 grid gap-3 sm:grid-cols-[2fr_1fr_1fr]">
         <input className="field" placeholder="Job title or company" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search" />
         <input className="field" placeholder="Location" value={loc} onChange={(e) => setLoc(e.target.value)} aria-label="Location" />
@@ -27,7 +27,7 @@ export function Jobs() {
       <ul className="divide-y divide-ink/15 border-y border-ink/15">
         {list.map((j) => (
           <li key={j.id}>
-            <Link to={`/jobs/${j.id}`} className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-4 hover:bg-white">
+            <Link to={`/jobs/${j.id}`} className="flex flex-wrap items-baseline gap-x-6 px-4 gap-y-1 py-4 hover:bg-white">
               <span className="min-w-60 flex-1">
                 <span className="block text-lg font-medium">{j.title}</span>
                 <span className="text-ink/70">{j.company}</span>
@@ -67,15 +67,15 @@ export function JobDetail() {
         <h2 className="mb-3 text-lg font-medium">Apply for this job</h2>
         {!me ? <p><Link className="underline" to="/login">Log in</Link> as a job seeker to apply.</p>
           : me.role !== 'seeker' ? <p>Employer accounts can't apply. Use a job seeker account.</p>
-          : applied ? <p className="font-medium text-sea">Application sent. Track it under My applications.</p>
-          : (
-            <form onSubmit={submit} className="space-y-3">
-              <label className="block text-sm">Resume link<input required type="url" className="field mt-1" placeholder="https://drive.google.com/…" value={form.resume} onChange={(e) => setForm({ ...form, resume: e.target.value })} /></label>
-              <label className="block text-sm">Cover letter<textarea required rows={5} className="field mt-1" value={form.cover} onChange={(e) => setForm({ ...form, cover: e.target.value })} /></label>
-              {err && <p role="alert" className="text-sm text-red-700">{err}</p>}
-              <button className="btn w-full">Send application</button>
-            </form>
-          )}
+            : applied ? <p className="font-medium text-sea">Application sent. Track it under My applications.</p>
+              : (
+                <form onSubmit={submit} className="space-y-3">
+                  <label className="block text-sm">Resume link<input required type="url" className="field mt-1" placeholder="https://drive.google.com/…" value={form.resume} onChange={(e) => setForm({ ...form, resume: e.target.value })} /></label>
+                  <label className="block text-sm">Cover letter<textarea required rows={5} className="field mt-1" value={form.cover} onChange={(e) => setForm({ ...form, cover: e.target.value })} /></label>
+                  {err && <p role="alert" className="text-sm text-red-700">{err}</p>}
+                  <button className="btn w-full">Send application</button>
+                </form>
+              )}
       </aside>
     </div>
   )
