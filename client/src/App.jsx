@@ -48,6 +48,41 @@ export default function App() {
           <Route path="*" element={<p>Page not found. <Link className="underline" to="/">Back to jobs</Link></p>} />
         </Routes>
       </main>
+
+      <footer className="mt-12 border-t border-ink/15 bg-white">
+        <div className="mx-auto grid max-w-5xl gap-20 px-4 py-5 sm:grid-cols-3">
+          <div>
+            <p className="text-xl font-bold tracking-tight">Job Seeker by William</p>
+            <p className="mt-2 max-w-xs text-sm text-ink/70">
+              Discover job opportunities, find the right position, and take the next step in your career.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-bold text-xl">Quick links</p>
+
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><Link to="/" className="hover:text-sea hover:underline">Browse jobs</Link></li>
+              <li><Link to="/register" className="hover:text-sea hover:underline">Create account</Link></li>
+              <li><Link to="/login" className="hover:text-sea hover:underline">Log in</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-bold text-xl"> About Us </p>
+            <p className="mt-3 text-sm text-ink/70">
+              Tel: 012 222 233 , 016 667 788<br />
+              Operating Hours: Monday to Saturday<br />
+              Time: 8:00am - 5:30pm <br />
+              Email: Jobseekerbywilliam@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-ink/10 py-4 text-center text-sm text-ink/60">
+          © {new Date().getFullYear()} Job Seeker by William. All rights reserved.
+        </div>
+      </footer>
     </>
   )
 }
