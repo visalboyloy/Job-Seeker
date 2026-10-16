@@ -14,7 +14,7 @@ export function Jobs() {
     j.location.toLowerCase().includes(loc.toLowerCase()) && (!type || j.type === type))
   return (
     <>
-      <h1 className="mb-6 max-w-xl text-4xl font-serif font-bold leading-tight tracking-tight">Find the job that fits, then apply in a minute.</h1>
+      <h1 className="mb-6 max-w-xl text-4xl font-serif font-bold leading-tight tracking-tight"> Find the right job for you!</h1>
       <div className="mb-6 grid gap-3 sm:grid-cols-[2fr_1fr_1fr]">
         <input className="field" placeholder="Job title or company" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search" />
         <input className="field" placeholder="Location" value={loc} onChange={(e) => setLoc(e.target.value)} aria-label="Location" />
